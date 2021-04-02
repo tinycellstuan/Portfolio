@@ -1,4 +1,4 @@
-# Atom 1.0 - WebServer & Documentation
+# Portfolio Structure & Documentation
 
 ### Folder Structure:
 
