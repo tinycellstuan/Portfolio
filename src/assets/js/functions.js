@@ -13,9 +13,9 @@ var env = 'customization';
 
 //Theme colors to be used from JS
 var themeColors = {
-    primary: '#1cc970',
-    primaryMedium: '#b3ffc5',
-    primaryLight: '#edfdf6',
+    primary: '#1c6cc9',
+    primaryMedium: '#2288ff',
+    primaryLight: '#79f2a1',
     secondary: '#ff227d',
     accent: '#79f2a1',
     success: '#06d6a0',
