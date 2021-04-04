@@ -219,7 +219,6 @@ function copyImages() {
     .pipe(browserSync.stream());
 }
 
-
 // PLACES FONT FILES IN THE DIST FOLDER
 function copyFont() {
   console.log('---------------COPYING FONTS INTO DIST FOLDER---------------');
@@ -393,5 +392,4 @@ exports.setup = series(setupBulma);
 exports.dev = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS, browserSyncInit, watchFiles);
 
 // BUILD
-exports.build = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS);
-
+exports.build = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS, browserSyncInit, watchFiles);
