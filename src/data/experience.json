@@ -1,4 +1,14 @@
-
 {
-  "Organizations": []
+  "Organizations": [
+    {
+      "Name": "Clarivate",
+      "Image": "",
+      "Identifier": "2",
+
+      "Members": "8,000",
+      "Position": "Senior Vice President",
+
+      "Note": "This is a note for reasonable purposes"
+    }
+  ]
 }

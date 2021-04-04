@@ -112,33 +112,44 @@ $(document).ready(function(){
             var Other = Experience.Other;
 
             for (var Index in Organizations) {
-              var Organization = Groups[Index];
+              var Organization = Organizations[Index];
               var Name = Organization.Name;
               var Identifier = Organization.Identifier;
+              var Image = Organization.Image;
               var Members = Organization.Members;
-              var Active = Organization.Active;
-              //var DevelopingTag = Active && `<span class="tag is-success">Developing</span>`;
+              var Position = Organization.Position;
+
               var Element = `
               <div class="column is-5">
-                <a href="/elements-colors.html" target="_blank" class="component-box">
+                  <a href="" target="_blank" class="component-box">
                       <div class="component">
-                          <img class="light-image-l" src="assets/img/icons/components/colors.svg"alt=""  data-lazy-load>
-                          <img class="dark-image-l" src="assets/img/icons/components/colors-dark.svg"alt=""  data-lazy-load>
+                          <img class="image-l" src="${Image}"alt=""  data-lazy-load>
                       </div>
 
                       <div class="component-title">${Name}</div>
-                      <div class="is-divider"></div>
+                      <div class="content">
+                          <div class="is-divider"></div>
 
-                      <div class="tags has-addons">
-                         <span class="tag is-primary">Members</span>
-                         <span class="tag">${Members}</span>
+                          <div class="field is-grouped is-grouped-multiline no-margin-all">
+                            <div class="control">
+                              <div class="tags has-addons">
+                                <span class="tag is-primary">Members</span>
+                                <span class="tag">${Members}</span>
+                              </div>
+                            </div>
 
-                         ${DevelopingTag}
+                            <div class="control">
+                              <div class="tags has-addons">
+                                <span class="tag is-success">Role</span>
+                                <span class="tag">${Position}</span>
+                              </div>
+                            </div>
+                          </div>
                       </div>
                   </a>
               </div>`
 
-              //$('#demo-elements').append(Element);
+              $('#demo-elements .columns').append(Element);
             }
         }
     });
