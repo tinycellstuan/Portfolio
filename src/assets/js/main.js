@@ -43,7 +43,7 @@ $(document).ready(function () {
 
         if ($('[data-sidebar-open]').length) {
             openSidebar();
-        }   
+        }
 
         if (window.matchMedia('(min-width: 768px)').matches && window.matchMedia('(max-width: 1024px)').matches && window.matchMedia('(orientation: landscape)').matches) {
             closeSidebarPanel();

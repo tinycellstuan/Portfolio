@@ -496,6 +496,8 @@ function initChosenSelects() {
 function initTabs() {
     $('.tabs-inner .tabs li, .vertical-tabs-wrapper .tabs li').on('click', function () {
         var tab_id = $(this).attr('data-tab');
+        var tab_content = $("#" + tab_id);
+        var tab_contet_filler = ``
 
         //$(this).closest('.tabs-wrapper').find('> .tabs-inner > .tabs > li.is-active').removeClass('is-active');
         //$(this).addClass('is-active');
@@ -505,6 +507,31 @@ function initTabs() {
 
         $(this).closest('.tabs-wrapper, .vertical-tabs-wrapper').find('.tab-content').removeClass('is-active');
         $("#" + tab_id).addClass('is-active');
+
+        if (tab_content && tab_content[0]) { // Ensure that content exist
+          if (tab_content[0].children && tab_content[0].children[0]) { // Ensure that children of content exist
+            if (tab_content[0].children[0].children.length <= 0) {
+              if (tab_content.find(`.page-placeholder`).length <= 0) {
+                var Placeholder = `<div class="page-placeholder">
+                    <div class="placeholder-content">
+                        <img class="light-image" src="assets/img/illustrations/placeholders/courses.svg" alt="">
+                        <img class="dark-image" src="assets/img/illustrations/placeholders/courses-dark.svg" alt="">
+                        <h3>This section is currently empty :(</h3>
+                        <p class="is-larger">I don't have much experience or have not worked for this type of organization yet!</p>
+                    </div>
+                </div>`
+
+                tab_content.append(Placeholder);
+              }
+            } else {
+              var Placeholder = tab_content.find(`.page-placeholder`);
+
+              if (Placeholder && Placeholder.length >= 1) {
+                Placeholder.remove();
+              }
+            }
+          }
+        }
     });
 
 

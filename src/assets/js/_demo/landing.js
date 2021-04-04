@@ -100,4 +100,46 @@ $(document).ready(function(){
 
     initBackToTop();
 
+    // Load experience from configuration
+    $.ajax({
+        url: 'assets/data/experience.json',
+        dataType: 'json',
+        success: function (Experience) {
+            var HTML = "";
+            var Groups = Experience.Groups;
+            var Organizations = Experience.Organizations;
+            var Projects = Experience.Projects;
+            var Other = Experience.Other;
+
+            for (var Index in Organizations) {
+              var Organization = Groups[Index];
+              var Name = Organization.Name;
+              var Identifier = Organization.Identifier;
+              var Members = Organization.Members;
+              var Active = Organization.Active;
+              //var DevelopingTag = Active && `<span class="tag is-success">Developing</span>`;
+              var Element = `
+              <div class="column is-5">
+                <a href="/elements-colors.html" target="_blank" class="component-box">
+                      <div class="component">
+                          <img class="light-image-l" src="assets/img/icons/components/colors.svg"alt=""  data-lazy-load>
+                          <img class="dark-image-l" src="assets/img/icons/components/colors-dark.svg"alt=""  data-lazy-load>
+                      </div>
+
+                      <div class="component-title">${Name}</div>
+                      <div class="is-divider"></div>
+
+                      <div class="tags has-addons">
+                         <span class="tag is-primary">Members</span>
+                         <span class="tag">${Members}</span>
+
+                         ${DevelopingTag}
+                      </div>
+                  </a>
+              </div>`
+
+              //$('#demo-elements').append(Element);
+            }
+        }
+    });
 })

@@ -12,7 +12,7 @@
 	.st6{fill:#EBEBEB;}
 	.st7{fill:#263238;}
 	.st8{fill:#E0E0E0;}
-	.st9{fill:#7778E3;}
+	.st9{fill:#2288ff;}
 	.st10{fill:#FFFFFF;}
 	.st11{opacity:0.2;}
 	.st12{fill:#E8505B;}
@@ -661,7 +661,7 @@
 		</g>
 		<g>
 			<g>
-				
+
 					<ellipse transform="matrix(0.1606 -0.987 0.987 0.1606 217.1942 899.9628)" class="st9" cx="637.7" cy="322.3" rx="8.4" ry="8.4"/>
 			</g>
 		</g>
