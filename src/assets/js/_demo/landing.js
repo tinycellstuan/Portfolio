@@ -111,6 +111,11 @@ $(document).ready(function(){
             var Projects = Experience.Projects;
             var Other = Experience.Other;
 
+            for (var Section in Experience) {
+              console.log(Section)
+              console.log(Experience[Section])
+            }
+
             for (var Index in Organizations) {
               var Organization = Organizations[Index];
               var Name = Organization.Name;

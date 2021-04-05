@@ -10,5 +10,18 @@
 
       "Note": "This is a note for reasonable purposes"
     }
+  ],
+
+  "Groups": [
+    {
+      "Name": "Code Red",
+      "Image": "",
+      "Identifier": "1",
+
+      "Members": "1,000",
+      "Position": "Programmer",
+
+      "Note": "This is a note for reasonable purposes"
+    }
   ]
 }
