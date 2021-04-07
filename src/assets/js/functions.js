@@ -9,7 +9,7 @@
     2. customization
 */
 
-var env = 'customization';
+var env = 'development';
 
 //Theme colors to be used from JS
 var themeColors = {

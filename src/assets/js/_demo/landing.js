@@ -105,33 +105,19 @@ $(document).ready(function(){
         url: 'assets/data/experience.json',
         dataType: 'json',
         success: function (Experience) {
-            var HTML = "";
-            var Groups = Experience.Groups;
-            var Organizations = Experience.Organizations;
-            var Projects = Experience.Projects;
-            var Other = Experience.Other;
-
             for (var Section in Experience) {
-              console.log(Section)
-              console.log(Experience[Section])
-            }
-
-            for (var Index in Organizations) {
-              var Organization = Organizations[Index];
-              var Name = Organization.Name;
-              var Identifier = Organization.Identifier;
-              var Image = Organization.Image;
-              var Members = Organization.Members;
-              var Position = Organization.Position;
-
-              var Element = `
+              var SectionName = Section;
+              var SectionComponents = Experience[Section];
+              var SectionElement = $(`#${SectionName}`);
+              var SectionColumns = $(`#${SectionName} .columns`);
+              var SectionComponentBoilerplate = `
               <div class="column is-5">
-                  <a href="" target="_blank" class="component-box">
+                  <a href="DATA_URL" target="_blank" class="component-box">
                       <div class="component">
-                          <img class="image-l" src="${Image}"alt=""  data-lazy-load>
+                          <img class="image-l" src="DATA_IMAGE"alt=""  data-lazy-load>
                       </div>
 
-                      <div class="component-title">${Name}</div>
+                      <div class="component-title">DATA_NAME</div>
                       <div class="content">
                           <div class="is-divider"></div>
 
@@ -139,14 +125,14 @@ $(document).ready(function(){
                             <div class="control">
                               <div class="tags has-addons">
                                 <span class="tag is-primary">Members</span>
-                                <span class="tag">${Members}</span>
+                                <span class="tag">DATA_MEMBERS</span>
                               </div>
                             </div>
 
                             <div class="control">
                               <div class="tags has-addons">
                                 <span class="tag is-success">Role</span>
-                                <span class="tag">${Position}</span>
+                                <span class="tag">DATA_POSITION</span>
                               </div>
                             </div>
                           </div>
@@ -154,7 +140,27 @@ $(document).ready(function(){
                   </a>
               </div>`
 
-              $('#demo-elements .columns').append(Element);
+              if (SectionElement && SectionColumns) {
+                for (var ComponentIndex in SectionComponents) {
+                  var ComponentInfo = SectionComponents[ComponentIndex];
+                  var ComponentName = ComponentInfo.Name;
+                  var ComponentIdentifier = ComponentInfo.Identifier;
+                  var ComponentImage = ComponentInfo.Image;
+                  var ComponentMembers = ComponentInfo.Members;
+                  var ComponentPosition = ComponentInfo.Position;
+                  var Component = SectionComponentBoilerplate;
+
+                  Component = Component.replace('DATA_NAME', ComponentName);
+                  Component = Component.replace('DATA_IMAGE', ComponentImage);
+                  Component = Component.replace('DATA_MEMBERS', ComponentMembers);
+                  Component = Component.replace('DATA_POSITION', ComponentPosition);
+                  Component = Component.replace('DATA_URL', `/experience.html?Type=${SectionName}&Id=${ComponentIdentifier}`);
+
+                  SectionColumns.append(Component);
+                }
+
+                console.log(`Successfully loaded experience section ${SectionName}`);
+              }
             }
         }
     });
