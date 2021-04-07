@@ -517,7 +517,7 @@ function initTabs() {
                         <img class="light-image" src="assets/img/illustrations/placeholders/courses.svg" alt="">
                         <img class="dark-image" src="assets/img/illustrations/placeholders/courses-dark.svg" alt="">
                         <h3>This section is currently empty :(</h3>
-                        <p class="is-larger">I don't have much experience or have not worked for this type of organization yet!</p>
+                        <p class="is-larger">I have yet to put any information in this section, check back later to see if this has changed!</p>
                     </div>
                 </div>`
 

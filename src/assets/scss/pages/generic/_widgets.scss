@@ -1190,49 +1190,51 @@ body {
 
                 &.is-active {
                     &.is-facebook {
-                        background: $facebook;
                         color: $smoke-white;
                         box-shadow: $facebook-box-shadow;
                     }
 
                     &.is-linkedin {
-                        background: $linkedin;
                         color: $smoke-white;
                         box-shadow: $facebook-box-shadow;
                     }
 
                     &.is-twitter {
-                        background: $twitter;
-                        color: $smoke-white;
+                        color: $twitter;
                         box-shadow: $twitter-box-shadow;
                     }
 
                     &.is-instagram {
-                        background: $instagram;
                         color: $smoke-white;
                         box-shadow: $angular-box-shadow;
                     }
 
                     &.is-github {
-                        background: $github;
-                        color: $smoke-white;
+                        color: $github;
+                        box-shadow: $github-box-shadow;
+                    }
+
+                    &.is-roblox {
+                        color: $github;
+                        box-shadow: $github-box-shadow;
+                    }
+
+                    &.is-discord {
+                        color: rgb(56, 43, 0);
                         box-shadow: $github-box-shadow;
                     }
 
                     &.is-invision {
-                        background: $invision;
                         color: $smoke-white;
                         box-shadow: $invision-box-shadow;
                     }
 
                     &.is-atlassian {
-                        background: $linkedin;
                         color: $smoke-white;
                         box-shadow: $linkedin-box-shadow;
                     }
 
                     &.is-bootstrap {
-                        background: $h-purple;
                         color: $smoke-white;
                         box-shadow: $h-purple-box-shadow;
                     }

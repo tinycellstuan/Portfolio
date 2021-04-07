@@ -113,8 +113,8 @@ $(document).ready(function(){
               var SectionComponentBoilerplate = `
               <div class="column is-5">
                   <a href="DATA_URL" target="_blank" class="component-box">
-                      <div class="component">
-                          <img class="image-l" src="DATA_IMAGE"alt=""  data-lazy-load>
+                      <div class="avatar-container">
+                          <img class="image-1" src="DATA_IMAGE" data-lazy-load>
                       </div>
 
                       <div class="component-title">DATA_NAME</div>

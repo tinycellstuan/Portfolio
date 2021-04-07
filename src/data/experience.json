@@ -17,8 +17,9 @@
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
-        "Default": null,
+        "Custom": null,
         "Roblox": null,
+        "Discord": null,
         "Github": null,
         "Twitter": null
       }
@@ -39,11 +40,13 @@
       "Position": "Junior Developer / Programmer",
 
       "Stacks": ["Javascript", "Lua"],
+      "Showcase": ["https://cdn.discordapp.com/attachments/694484896772784130/718500710806978620/unknown.png", "https://cdn.discordapp.com/attachments/694484896772784130/712781534867751012/unknown.png"],
       "Links": {
-        "Default": null,
-        "Roblox": null,
-        "Github": null,
-        "Twitter": null
+        "Custom": null,
+        "Roblox": "https://www.roblox.com/groups/3069549/SCPF-Special-Containment-Procedures-Foundation#!/about",
+        "Discord": "https://google.com",
+        "Github": "https://github.com/absumption-cant-code/Portfolio",
+        "Twitter": "https://twitter.com/random?lang=en"
       }
     },
 
@@ -62,8 +65,9 @@
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
-        "Default": null,
+        "Custom": null,
         "Roblox": null,
+        "Discord": null,
         "Github": null,
         "Twitter": null
       }
@@ -84,8 +88,9 @@
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
-        "Default": null,
+        "Custom": null,
         "Roblox": null,
+        "Discord": null,
         "Github": null,
         "Twitter": null
       }
@@ -106,8 +111,9 @@
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
-        "Default": null,
+        "Custom": null,
         "Roblox": null,
+        "Discord": null,
         "Github": null,
         "Twitter": null
       }
@@ -128,7 +134,7 @@
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
-        "Default": null,
+        "Custom": null,
         "Roblox": null,
         "Github": null,
         "Twitter": null
@@ -151,7 +157,7 @@
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
-        "Default": null,
+        "Custom": null,
         "Roblox": null,
         "Github": null,
         "Twitter": null

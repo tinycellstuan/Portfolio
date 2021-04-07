@@ -25,11 +25,17 @@ $(document).ready(function () {
           "Tags": document.getElementById('DATA_TAGS'),
           "Badges": document.getElementById('DATA_BADGES'),
           "Stacks": document.getElementById('DATA_STACKS'),
-          "Links": document.getElementById('DATA_LINKS'),
           "Members": document.getElementById('DATA_MEMBERS'),
           "Visits": document.getElementById('DATA_VISITS'),
           "Revenue": document.getElementById('DATA_REVENUE'),
-          "Gallery": document.getElementById('lightgallery') // This cannot be changed due to plugin development
+          "Gallery": document.getElementById('lightgallery'), // This cannot be changed due to plugin development
+          "Links": {
+            "Custom": document.getElementById('DATA_LINK_CUSTOM'),
+            "Roblox": document.getElementById('DATA_LINK_ROBLOX'),
+            "Github": document.getElementById('DATA_LINK_GITHUB'),
+            "Twitter": document.getElementById('DATA_LINK_TWITTER'),
+            "Discord": document.getElementById('DATA_LINK_DISCORD')
+          }
         };
 
         $.ajax({
@@ -72,11 +78,10 @@ $(document).ready(function () {
                         data-pop-content="VAR_DESC"
                         data-pop-position="top" data-pop-icon="VAR_ICON"
                         data-pop-iconbg="VAR_COLOR_2"> <i class="VAR_ICON_2"></i> </div>`,
-
                     "Stack": `
                     <div class="media-flex-center">
                         <div class="h-avatar is-small">
-                            <img class="avatar" src="VAR_ICON" data-demo-src="VAR_ICON" alt="">
+                            <img class="avatar" src="VAR_ICON" alt="">
                         </div>
                         <div class="flex-meta">
                             <span>VAR_NAME</span>
@@ -84,12 +89,11 @@ $(document).ready(function () {
                         </div>
                     </div>
                     `,
-
-                    "ShowcaseImage": `
+                    "Image": `
                     <a href="VAR_IMAGE_1">
                         <img src="VAR_IMAGE_2" alt="">
                     </a>
-                    `
+                    `,
                   };
 
                   Sections.Image.src = Image;
@@ -153,15 +157,60 @@ $(document).ready(function () {
                     Sections.Badges.insertAdjacentHTML('beforeend', Badge);
                   }
 
+                  if (Links) {
+                    for (var Name in Sections.Links) {
+                      var Route = Links[Name];
+                      var Section = Sections.Links[Name];
+                      var Attributes = Section && Section.classList;
+
+                      if (Route && Section) {
+                        Section.href = Route;
+                      } else {
+                        if (Section && !Route) {
+                          Section.href = "#";
+                          Attributes.add('is-disabled');
+                        }
+                      }
+                    }
+                  }
+
                   if (Showcase) {
                     for (var ImageIndex in Showcase) {
                       var Image = Showcase[ImageIndex];
-                      var Container = Boilerplates.ShowcaseImage;
+                      var Container = Boilerplates.Image;
 
                       Container = Container.replace('VAR_IMAGE_1', Image);
                       Container = Container.replace('VAR_IMAGE_2', Image);
 
                       Sections.Gallery.insertAdjacentHTML('beforeend', Container);
+                    }
+                  }
+
+                  if (Stacks) {
+                    var Section = Sections.Stacks;
+                    var StackData = {
+                      "Lua": {"Image": "assets/img/icons/stacks/lua.svg", "Description": "Programming language"},
+                      "Javascript": {"Image": "assets/img/icons/stacks/js.svg", "Description": "Programming language"},
+                      "HTML": {"Image": "assets/img/icons/stacks/html5.svg", "Description": "Hypertext Markup"},
+                      "CSS": {"Image": "assets/img/icons/stacks/css3.svg", "Description": "Cascading Stylesheets"},
+                      "Rojo": {"Image": "https://rojo.space/static/logo-512-258e64db24b3d9db3e912f6f8fce5af6.png", "Description": "Cross-platform code synchronizer"}
+                    };
+
+                    for (var StackIndex in Stacks) {
+                      var Stack = Stacks[StackIndex];
+                      var Data = Stack && StackData[Stack];
+                      var Name = Stack;
+                      var Image = Data && Data.Image;
+                      var Description = Data && Data.Description;
+
+                      if(Stack && Image && Description) {
+                        Stack = Boilerplates.Stack;
+                        Stack = Stack.replace('VAR_ICON', Image);
+                        Stack = Stack.replace('VAR_NAME', Name);
+                        Stack = Stack.replace('VAR_DESC', Description);
+
+                        Sections.Stacks.insertAdjacentHTML('beforeend', Stack);
+                      }
                     }
                   }
                 } else {
