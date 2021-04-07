@@ -61,6 +61,36 @@ $(document).ready(function () {
                   var Visits = ExperienceData.Visits;
                   var Revenue = ExperienceData.Revenue;
                   var Showcase = ExperienceData.Showcase;
+                  var Note = ExperienceData.Note;
+                  var Boilerplates = {
+                    "Tag": `
+                    <span class="tag is-rounded VAR_COLOR">VAR_NAME</span>
+                    `,
+                    "Badge": `
+                    <div class="meta-achievement VAR_COLOR_1" data-toggle="popover" data-pop-mode="hover"
+                        data-pop-width="220" data-pop-title="VAR_NAME"
+                        data-pop-content="VAR_DESC"
+                        data-pop-position="top" data-pop-icon="VAR_ICON"
+                        data-pop-iconbg="VAR_COLOR_2"> <i class="VAR_ICON_2"></i> </div>`,
+
+                    "Stack": `
+                    <div class="media-flex-center">
+                        <div class="h-avatar is-small">
+                            <img class="avatar" src="VAR_ICON" data-demo-src="VAR_ICON" alt="">
+                        </div>
+                        <div class="flex-meta">
+                            <span>VAR_NAME</span>
+                            <span>VAR_DESC</span>
+                        </div>
+                    </div>
+                    `,
+
+                    "ShowcaseImage": `
+                    <a href="VAR_IMAGE">
+                        <img src="VAR_IMAGE" alt="">
+                    </a>
+                    `
+                  };
 
                   Sections.Image.src = Image;
                   Sections.Name.innerHTML = Name;
@@ -69,6 +99,50 @@ $(document).ready(function () {
                   Sections.Members.innerHTML = Members;
                   Sections.Visits.innerHTML = Visits;
                   Sections.Revenue.innerHTML = Revenue;
+
+                  if (Featured && Featured == 'true') {
+                    var Badge = Boilerplates.Badge;
+                    var Tag = Boilerplates.Tag;
+
+                    Tag = Tag.replace('VAR_COLOR', 'is-primary');
+                    Tag = Tag.replace('VAR_NAME', 'Featured');
+
+                    Badge = Badge.replace('VAR_NAME', 'Featured');
+                    Badge = Badge.replace('VAR_DESC', 'This group or project accurately represents my work-ethic, and skill.');
+                    Badge = Badge.replace('VAR_COLOR_1', 'is-primary');
+                    Badge = Badge.replace('VAR_COLOR_2', 'primary');
+                    Badge = Badge.replace('VAR_ICON', 'fas fa-award');
+                    Badge = Badge.replace('VAR_ICON_2', 'fas fa-award');
+
+                    Sections.Tags.innerHTML += Tag;
+                    Sections.Badges.insertAdjacentHTML('beforeend', Badge);
+                  }
+
+                  if (Active && Active == 'false' || !Active) {
+                    var Badge = Boilerplates.Badge;
+
+                    Badge = Badge.replace('VAR_NAME', 'Departed');
+                    Badge = Badge.replace('VAR_DESC', 'I am no longer apart of this group or project listed here.');
+                    Badge = Badge.replace('VAR_COLOR_1', 'is-danger');
+                    Badge = Badge.replace('VAR_COLOR_2', 'red');
+                    Badge = Badge.replace('VAR_ICON', 'fas fa-unlink');
+                    Badge = Badge.replace('VAR_ICON_2', 'fas fa-unlink');
+
+                    Sections.Badges.innerHTML += Badge;
+                  }
+
+                  if (Note && Note !== 'false') {
+                    var Badge = Boilerplates.Badge;
+
+                    Badge = Badge.replace('VAR_NAME', 'Note');
+                    Badge = Badge.replace('VAR_DESC', Note);
+                    Badge = Badge.replace('VAR_COLOR_1', '');
+                    Badge = Badge.replace('VAR_COLOR_2', 'dark-sidebar');
+                    Badge = Badge.replace('VAR_ICON', 'fas fa-exclamation');
+                    Badge = Badge.replace('VAR_ICON_2', 'fas fa-exclamation');
+
+                    Sections.Badges.innerHTML += Badge;
+                  }
                 } else {
                   DisplayError = true;
                 }

@@ -7,6 +7,16 @@ Ajax User Popovers
 "use strict";
 
 $(document).ready(function () {
+    const Observer = new MutationObserver(Record => {
+      initTextPopovers();
+    });
+
+    Observer.observe(document.body, {
+      childList: false,
+      attributes: true,
+      subtree: false,
+      characterData: false
+    });
 
     function initTextPopovers() {
         $('*[data-toggle="popover"]').each(function () {
@@ -62,6 +72,7 @@ $(document).ready(function () {
     }
 
     initTextPopovers();
+
 
     function initUserPopovers() {
         $('*[data-user-popover]').each(function () {

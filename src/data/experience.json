@@ -4,9 +4,10 @@
       "Name": "Code Red Community",
       "Image": "https://i.imgur.com/LpOaXwo.png",
       "Identifier": "1",
-      "Active": "false",
-      "Featured": "true",
+      "Active": "true",
+      "Featured": "false",
       "Description": "Code Red was a multi-map, round based, survival & combat game. The goal of the player will vary based on their given class, and each class will have an end objective. Every player has the chance and ability to win if they play to their strengths and outsmart the other players.",
+      "Note": null,
 
       "Members": "1,000",
       "Visits": "10K +",
