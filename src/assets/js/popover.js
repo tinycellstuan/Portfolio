@@ -12,9 +12,9 @@ $(document).ready(function () {
     });
 
     Observer.observe(document.body, {
-      childList: false,
+      childList: true,
       attributes: true,
-      subtree: false,
+      subtree: true,
       characterData: false
     });
 

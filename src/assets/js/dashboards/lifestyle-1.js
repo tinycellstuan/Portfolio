@@ -29,7 +29,7 @@ $(document).ready(function () {
           "Members": document.getElementById('DATA_MEMBERS'),
           "Visits": document.getElementById('DATA_VISITS'),
           "Revenue": document.getElementById('DATA_REVENUE'),
-          "Gallery": document.getElementById('DATA_GALLERY')
+          "Gallery": document.getElementById('lightgallery') // This cannot be changed due to plugin development
         };
 
         $.ajax({
@@ -86,8 +86,8 @@ $(document).ready(function () {
                     `,
 
                     "ShowcaseImage": `
-                    <a href="VAR_IMAGE">
-                        <img src="VAR_IMAGE" alt="">
+                    <a href="VAR_IMAGE_1">
+                        <img src="VAR_IMAGE_2" alt="">
                     </a>
                     `
                   };
@@ -99,6 +99,15 @@ $(document).ready(function () {
                   Sections.Members.innerHTML = Members;
                   Sections.Visits.innerHTML = Visits;
                   Sections.Revenue.innerHTML = Revenue;
+
+                  if (Type) {
+                    var Tag = Boilerplates.Tag;
+
+                    Tag = Tag.replace('VAR_COLOR', 'is-solid');
+                    Tag = Tag.replace('VAR_NAME', Type);
+
+                    Sections.Tags.insertAdjacentHTML('beforeend', Tag);
+                  }
 
                   if (Featured && Featured == 'true') {
                     var Badge = Boilerplates.Badge;
@@ -114,7 +123,7 @@ $(document).ready(function () {
                     Badge = Badge.replace('VAR_ICON', 'fas fa-award');
                     Badge = Badge.replace('VAR_ICON_2', 'fas fa-award');
 
-                    Sections.Tags.innerHTML += Tag;
+                    Sections.Tags.insertAdjacentHTML('beforeend', Tag);
                     Sections.Badges.insertAdjacentHTML('beforeend', Badge);
                   }
 
@@ -128,7 +137,7 @@ $(document).ready(function () {
                     Badge = Badge.replace('VAR_ICON', 'fas fa-unlink');
                     Badge = Badge.replace('VAR_ICON_2', 'fas fa-unlink');
 
-                    Sections.Badges.innerHTML += Badge;
+                    Sections.Badges.insertAdjacentHTML('beforeend', Badge);
                   }
 
                   if (Note && Note !== 'false') {
@@ -141,7 +150,19 @@ $(document).ready(function () {
                     Badge = Badge.replace('VAR_ICON', 'fas fa-exclamation');
                     Badge = Badge.replace('VAR_ICON_2', 'fas fa-exclamation');
 
-                    Sections.Badges.innerHTML += Badge;
+                    Sections.Badges.insertAdjacentHTML('beforeend', Badge);
+                  }
+
+                  if (Showcase) {
+                    for (var ImageIndex in Showcase) {
+                      var Image = Showcase[ImageIndex];
+                      var Container = Boilerplates.ShowcaseImage;
+
+                      Container = Container.replace('VAR_IMAGE_1', Image);
+                      Container = Container.replace('VAR_IMAGE_2', Image);
+
+                      Sections.Gallery.insertAdjacentHTML('beforeend', Container);
+                    }
                   }
                 } else {
                   DisplayError = true;

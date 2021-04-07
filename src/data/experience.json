@@ -1,18 +1,130 @@
 {
-  "Organizations": [
+  "Organizations": [],
+  "Groups": [
     {
       "Name": "Code Red Community",
       "Image": "https://i.imgur.com/LpOaXwo.png",
       "Identifier": "1",
-      "Active": "true",
-      "Featured": "false",
+      "Active": "false",
+      "Featured": "true",
       "Description": "Code Red was a multi-map, round based, survival & combat game. The goal of the player will vary based on their given class, and each class will have an end objective. Every player has the chance and ability to win if they play to their strengths and outsmart the other players.",
       "Note": null,
 
-      "Members": "1,000",
-      "Visits": "10K +",
-      "Revenue": "10M +",
+      "Members": "1K +",
+      "Visits": "100 +",
+      "Revenue": "0",
       "Position": "Programmer",
+
+      "Stacks": ["Javascript", "Lua"],
+      "Links": {
+        "Default": null,
+        "Roblox": null,
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "Special Containment Procedures Foundation",
+      "Image": "https://t0.rbxcdn.com/5299bb92a67556786861848613559eaf",
+      "Identifier": "2",
+      "Active": "true",
+      "Featured": "true",
+      "Description": "The SCP Foundation is a fictional organization documented by the web-based collaborative-fiction project of the same name. The SCP Foundation is responsible for locating and containing individuals, entities, locations, and objects that violate natural law",
+      "Note": "This is not a full-time position and is treated more as a in-house contractor position.",
+
+      "Members": "250K +",
+      "Visits": "16M +",
+      "Revenue": "10M +",
+      "Position": "Junior Developer / Programmer",
+
+      "Stacks": ["Javascript", "Lua"],
+      "Links": {
+        "Default": null,
+        "Roblox": null,
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "Foxtrot Asylum Roleplay",
+      "Image": "https://t2.rbxcdn.com/5cca1242e0147a20b96322730f50509e",
+      "Identifier": "3",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "The Foxtrot Medical Institute is a mental asylum that is committed to concealment of the mentally ill as well as the maintenance of order and a safe environment.",
+
+      "Members": "140K +",
+      "Visits": "2.7M +",
+      "Revenue": "6M +",
+      "Position": "Lead Programmer",
+
+      "Stacks": ["Javascript", "Lua"],
+      "Links": {
+        "Default": null,
+        "Roblox": null,
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "United States Army",
+      "Image": "https://t3.rbxcdn.com/b5cc4f1ce50c539a31404e3de63cf931",
+      "Identifier": "4",
+      "Active": "false",
+      "Featured": "true",
+      "Description": "The United States Army is the land warfare service branch of the United States Armed Forces. It is the most senior and largest branch of the Armed Forces. The origins of the U.S. Army can be traced back to the Revolutionary War.",
+
+      "Members": "274K +",
+      "Visits": "2.3M +",
+      "Revenue": "4M +",
+      "Position": "Project Manager & Programmer",
+
+      "Stacks": ["Javascript", "Lua"],
+      "Links": {
+        "Default": null,
+        "Roblox": null,
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "United States Μarine Cοrps",
+      "Image": "https://t5.rbxcdn.com/23f0697580164ee2aadd3a9087377f00",
+      "Identifier": "5",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "The United States Marine Corps is a branch of the U.S. Military responsible for providing power projection, using the mobility of the Navy, by Congressional mandate, to deliver rapidly, combined-arms task forces on land, at sea, and in the air.",
+
+      "Members": "40K +",
+      "Visits": "250K +",
+      "Revenue": "1M +",
+      "Position": "Secondary Programmer",
+
+      "Stacks": ["Javascript", "Lua"],
+      "Links": {
+        "Default": null,
+        "Roblox": null,
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "United States Air Force",
+      "Image": "https://t7.rbxcdn.com/8e80f24db77a4b48638299ab9f3f9e3a",
+      "Identifier": "6",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "The United States Air Force (USAF) is the aerial warfare service branch of the United States Armed Forces. Initially formed as a part of the United States Army on 1 August 1907, the USAF was established as a separate branch of the U.S. Armed Forces on 18 September 1947.",
+
+      "Members": "78K +",
+      "Visits": "650K +",
+      "Revenue": "1.5M +",
+      "Position": "Secondary Programmer",
 
       "Stacks": ["Javascript", "Lua"],
       "Links": {
@@ -23,8 +135,27 @@
       }
     }
   ],
+  "Projects": [
+    {
+      "Name": "Speed Simulator",
+      "Image": "https://t6.rbxcdn.com/eb0cd4d971f70cafbe5de85b19f3d84b",
+      "Identifier": "1",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "Speed Simulator is a game designed around increasing your speed through the use of various activites such as consuming drinks, jumping over obstacles, and participating in races..",
 
-  "Groups": [
+      "Members": "N/A",
+      "Visits": "4.4M +",
+      "Revenue": "3M +",
+      "Position": "Programmer",
 
+      "Stacks": ["Javascript", "Lua"],
+      "Links": {
+        "Default": null,
+        "Roblox": null,
+        "Github": null,
+        "Twitter": null
+      }
+    }
   ]
 }
