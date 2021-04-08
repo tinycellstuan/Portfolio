@@ -23,6 +23,8 @@ const newer = require('gulp-newer');
 const autoprefixer = require('gulp-autoprefixer');
 const accessibility = require('gulp-accessibility');
 const babel = require('gulp-babel');
+const constantLib = require('node-static');
+const http = require('http');
 const nodepath = 'node_modules/';
 const assetspath = 'assets/';
 
@@ -205,6 +207,18 @@ function browserSyncInit(done) {
     server: './dist'
   });
   return done();
+}
+
+function browserServeInit(done) {
+  console.log('---------------BROWSER SERVE---------------');
+	var Distribution = new(constantLib.Server)('./dist');
+	var Distributor = http.createServer(function(req, res) {
+		Distribution.serve(req, res);
+	})
+
+	Distributor.listen(8080);
+
+	return done();
 }
 
 // ------------ OPTIMIZATION TASKS -------------
