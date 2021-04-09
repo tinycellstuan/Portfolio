@@ -20,7 +20,7 @@ module.exports = {
     'indent-width-cont': false,
     'spec-char-escape': true,
     'text-ignore-regex': false,
-    'tag-bans': ['style', 'b', 'i'],
+    'tag-bans': ['b', 'i'],
     'tag-close': true,
     'tag-name-lowercase': true,
     'tag-name-match': true,
@@ -64,5 +64,10 @@ module.exports = {
     'input-req-label': false,
     'table-req-caption': false,
     'table-req-header': false,
-    'tag-req-attr': false
+    'tag-req-attr': false,
+    'link-min-length-4': false,
+    'input-btn-req-value-or-title': false,
+    'button-req-content': false,
+    'label-no-enc-textarea-or-select': false,
+    'fieldset-contains-legend': false
 };

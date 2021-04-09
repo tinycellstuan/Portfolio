@@ -14,14 +14,14 @@ module.exports = {
 
 module.exports.lint = function (element, opts) {
     function getVal(a, value) {
-        return a && a.value && a.value;
+        return a && a.value;
     }
 
-    var noopen = ['noopener', 'noreferrer'];
+    var noopen = /(^| )(noopener|noreferrer)( |$)/;
 
     var attrs = element.attribs;
     if (getVal(attrs.target) === '_blank' &&
-        noopen.indexOf(getVal(attrs.rel)) === -1) {
+        !noopen.test(getVal(attrs.rel))) {
         return new Issue('E058', element.openLineCol);
     }
     return [];

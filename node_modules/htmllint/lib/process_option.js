@@ -28,10 +28,6 @@ module.exports = {
             return o === option ? option : o ? true : false;
         }
     },
-    arrayOfStr: function (o) {
-        return lodash.isArray(o) && lodash.every(o, lodash.isString)
-            ? o : undefined;
-    },
     options: function (opts) {
         return function (o) {
             return opts.indexOf(o) > -1 ? o : undefined;
@@ -43,6 +39,14 @@ module.exports = {
     regexGlobal: function (r) {
         r = module.exports.regex(r);
         return r && new RegExp(r.source, r.ignoreCase ? 'gi' : 'g');
+    },
+    arrayOfAttrs: function (strs) {
+        if (!lodash.isArray(strs)) { return undefined; }
+        for (var i = 0; i < strs.length; i++) {
+            strs[i] = getRegExp(strs[i], function(a) { return a.toLowerCase(); });
+            if (!strs[i]) { return undefined; }
+        }
+        return strs;
     },
     posInt: function (i) {
         return (lodash.isInteger(i) && i >= 0) ? i : undefined;
