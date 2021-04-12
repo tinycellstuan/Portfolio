@@ -1,6 +1,78 @@
 {
-  "Organizations": [],
+  "Organizations": [
+    {
+      "Name": "Atom",
+      "Image": "https://t3.rbxcdn.com/c5cd96dcbc977e18c0d44a41ff8308de",
+      "Identifier": "1",
+      "Active": "true",
+      "Featured": "true",
+      "Description": "Atom was a group development solutions organization based off of the Roblox platform. Atom's primary objective was to provide group ranking services to hundreds of groups accross Roblox",
+      "Note": "The entirety of Atom was coded by myself and contains its own custom framework, content-delivery system, and secure token system.",
+
+      "Members": "2K +",
+      "Visits": "N/A",
+      "Revenue": "300K",
+      "Position": "Director / Programmer",
+
+      "Stacks": ["HTML", "CSS", "SQL", "Javascript", "Lua"],
+      "Links": {
+        "Custom": null,
+        "Roblox": "https://www.roblox.com/groups/10057040/",
+        "Discord": "https://discord.gg/RFeBRN5FeB",
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "Vanguard Servers",
+      "Image": "https://i.imgur.com/SizskuS.png",
+      "Identifier": "2",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "Vanguard Servers was a Garry's Mod based server community that relied heavily on its custom content to provide its players with unique experiences. All custom content seen on the server network was created using the Lua programming language.",
+      "Note": "This organization has no direct connection to Roblox based development besides the use of Lua as the primary programming langauge.",
+
+      "Members": "1K +",
+      "Visits": "10K +",
+      "Revenue": "2000 USD",
+      "Position": "Owner / Programmer",
+
+      "Stacks": ["HTML", "CSS", "SQL", "Javascript", "Lua"],
+      "Links": {
+        "Custom": "https://vanguardservers.net",
+        "Roblox": null,
+        "Discord": null,
+        "Github": null,
+        "Twitter": null
+      }
+    }
+  ],
   "Groups": [
+    {
+      "Name": "The Euphoria Project",
+      "Image": "https://t0.rbxcdn.com/d9fbf0ab55a3bdecf9bcfc8e3def88d7",
+      "Identifier": "0",
+      "Active": "true",
+      "Featured": "true",
+      "Description": "The Euphoria Project is my own development studio that houses numerous different projects & games. Most notably the game, In The City which has yet to release.",
+      "Note": "This group is listed as featured because of its use of my own custom game framework and displays my current skill level, having inter-server communication and Roblox -> VPS communication.",
+
+      "Members": "N/A",
+      "Visits": "N/A",
+      "Revenue": "N/A",
+      "Position": "Programmer",
+
+      "Stacks": ["HTML", "CSS", "SQL", "Javascript", "Lua"],
+      "Links": {
+        "Custom": null,
+        "Roblox": "https://www.roblox.com/groups/8287051/",
+        "Discord": "https://discord.gg/G2MVFDudZZ",
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
     {
       "Name": "Code Red Community",
       "Image": "https://i.imgur.com/LpOaXwo.png",
@@ -15,7 +87,7 @@
       "Revenue": "0",
       "Position": "Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Javascript", "Lua", "Rojo"],
       "Links": {
         "Custom": null,
         "Roblox": null,
@@ -143,9 +215,31 @@
   ],
   "Projects": [
     {
+      "Name": "Facility Bravo",
+      "Image": "https://t3.rbxcdn.com/3fd6ab0041299418200fd70914342b3e",
+      "Identifier": "1",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "Facility Bravo was a roleplay facility tasked with containing new viruses and diseases, as well as the treatment of people infected with these.",
+
+      "Members": "4K +",
+      "Visits": "12K +",
+      "Revenue": "400K +",
+      "Position": "Programmer",
+
+      "Stacks": ["Lua"],
+      "Links": {
+        "Custom": "https://www.roblox.com/groups/5825841/",
+        "Roblox": "https://www.roblox.com/games/4827384756/",
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
       "Name": "Speed Simulator",
       "Image": "https://t6.rbxcdn.com/eb0cd4d971f70cafbe5de85b19f3d84b",
-      "Identifier": "1",
+      "Identifier": "2",
       "Active": "false",
       "Featured": "false",
       "Description": "Speed Simulator is a game designed around increasing your speed through the use of various activites such as consuming drinks, jumping over obstacles, and participating in races..",
@@ -162,6 +256,52 @@
         "Github": null,
         "Twitter": null
       }
+    },
+
+    {
+      "Name": "Area-39 Roleplay",
+      "Image": "https://t4.rbxcdn.com/78a88121faa20a42887dedcee70b8b20",
+      "Identifier": "3",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "Area-39 is an SCP Roleplay game where you can pick and choose from a variety of teams and unlock those teams by playing the game.",
+
+      "Members": "N/A",
+      "Visits": "232K +",
+      "Revenue": "1M +",
+      "Position": "Programmer",
+
+      "Stacks": ["Lua"],
+      "Links": {
+        "Custom": null,
+        "Roblox": "https://www.roblox.com/games/6530838718/",
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
+      "Name": "The Quarantine",
+      "Image": "https://t3.rbxcdn.com/4bdc99b809678c5977f614a3f07b0136",
+      "Identifier": "4",
+      "Active": "false",
+      "Featured": "false",
+      "Description": "The Quarantine was a post-apocolyptic game centered around a future where the United States is in ruins. It focuses on the dangerous passage to saftey and crossing borders.",
+
+      "Members": "33K +",
+      "Visits": "814K +",
+      "Revenue": "1.5M +",
+      "Position": "Programmer",
+
+      "Stacks": ["Lua"],
+      "Links": {
+        "Custom": null,
+        "Roblox": "https://www.roblox.com/games/5089158038/",
+        "Github": null,
+        "Twitter": null
+      }
     }
-  ]
+  ],
+
+  "Other": []
 }

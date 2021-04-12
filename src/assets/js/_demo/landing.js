@@ -111,50 +111,53 @@ $(document).ready(function(){
               var SectionElement = $(`#${SectionName}`);
               var SectionColumns = $(`#${SectionName} .columns`);
               var SectionComponentBoilerplate = `
-              <div class="column is-5">
-                  <a href="DATA_URL" target="_blank" class="component-box">
-                      <div class="avatar-container">
-                          <img class="image-1" src="DATA_IMAGE" data-lazy-load>
+            <div class="column is-12">
+              <a href="DATA_URL" target="_blank" class="component-box">
+                  <div class="avatar-container">
+                      <img src="DATA_IMAGE" alt="">
+                  </div>
+                  <div class="header">
+                      <div class="title-wrap">
+                        <div class="title">
+                          <h3>
+                              <span>DATA_NAME</span>
+                              FEATURED_ICON
+                          </h3>
+                          <span>DATA_POSITION</span>
+                        </div>
                       </div>
 
-                      <div class="component-title">DATA_NAME</div>
-                      <div class="content">
-                          <div class="is-divider"></div>
-
-                          <div class="field is-grouped is-grouped-multiline no-margin-all">
-                            <div class="control">
-                              <div class="tags has-addons">
-                                <span class="tag is-primary">Members</span>
-                                <span class="tag">DATA_MEMBERS</span>
-                              </div>
-                            </div>
-
-                            <div class="control">
-                              <div class="tags has-addons">
-                                <span class="tag is-success">Role</span>
-                                <span class="tag">DATA_POSITION</span>
-                              </div>
-                            </div>
-                          </div>
+                      <div class="description-wrap">
+                          <p>DATA_DESC</p>
                       </div>
-                  </a>
-              </div>`
+                  </div>
+                </a>
+            </div>`
 
               if (SectionElement && SectionColumns) {
                 for (var ComponentIndex in SectionComponents) {
                   var ComponentInfo = SectionComponents[ComponentIndex];
-                  var ComponentName = ComponentInfo.Name;
-                  var ComponentIdentifier = ComponentInfo.Identifier;
-                  var ComponentImage = ComponentInfo.Image;
-                  var ComponentMembers = ComponentInfo.Members;
-                  var ComponentPosition = ComponentInfo.Position;
+                  var Identifier = ComponentInfo.Identifier;
+                  var Name = ComponentInfo.Name;
+                  var Image = ComponentInfo.Image;
+                  var Description = ComponentInfo.Description;
+                  var Position = ComponentInfo.Position;
+                  var Featured = ComponentInfo.Featured;
                   var Component = SectionComponentBoilerplate;
 
-                  Component = Component.replace('DATA_NAME', ComponentName);
-                  Component = Component.replace('DATA_IMAGE', ComponentImage);
-                  Component = Component.replace('DATA_MEMBERS', ComponentMembers);
-                  Component = Component.replace('DATA_POSITION', ComponentPosition);
-                  Component = Component.replace('DATA_URL', `/experience.html?Type=${SectionName}&Id=${ComponentIdentifier}`);
+                  Component = Component.replace('DATA_NAME', Name);
+                  Component = Component.replace('DATA_IMAGE', Image);
+                  Component = Component.replace('DATA_POSITION', Position);
+                  Component = Component.replace('DATA_DESC', Description);
+                  Component = Component.replace('DATA_TYPE', SectionName);
+                  Component = Component.replace('DATA_URL', `/experience.html?Type=${SectionName}&Id=${Identifier}`);
+
+                  if (Featured && Featured == 'true') {
+                    Component = Component.replace('component-box', 'component-box featured');
+                    Component = Component.replace('FEATURED_ICON', '<i class="fas fa-award"></i>');
+                  } else {
+                    Component = Component.replace('FEATURED_ICON', '');
+                  }
 
                   SectionColumns.append(Component);
                 }

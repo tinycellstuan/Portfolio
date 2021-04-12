@@ -19,7 +19,6 @@ $accent: #2288ff;
 /* ==========================================================================
 2. Global colors
 ========================================================================== */
-
 $body-color: #f9f9f9;
 
 $white: #fff;
@@ -30,7 +29,7 @@ $placeholder: #cecece;
 $muted-grey: #999;
 $fade-grey: #ededed;
 $accent-grey: #ccc;
-$background-grey: #f0f0f0;
+$background-grey: #191c2b;
 $section-grey: #fcfcfc;
 $medium-grey: #ddd;
 $light-grey: #eee;
@@ -59,5 +58,12 @@ $active: #6DCFF6;
 
 $sidebar: #344258;
 
-$dark-sidebar: #232326;
+/* ==========================================================================
+2. Dark Mode Colors
+========================================================================== */
+$dark-body-color: #0c0e14;
+$dark-navigation-color: #191c2b;
+$dark-dark-text: #aaaab3;
+
+$dark-sidebar: #0c0e14;
 $dark-dark-text: #aaaab3;

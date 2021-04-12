@@ -13,9 +13,9 @@
     10. Sections Dark mode
     11. CTA block
     12. CTA block Dark mode
-    13. Demos 
+    13. Demos
     14. Demos Dark mode
-    15. Footer 
+    15. Footer
     16. Footer Dark mode
     17. Night Switch
     18. CTA Section
@@ -1042,15 +1042,86 @@ $landing-dark-2: #191c2b;
 }
 
 .component-box {
-    display: block;
-    text-align: center;
+    display: flex;
     background: $white;
     border: 1px solid darken($fade-grey, 3%);
-    padding: 20px;
     border-radius: 8px;
-    margin-bottom: 0;
+    padding: 20px;
     transition: all .3s;
     cursor: pointer;
+
+    .header {
+        font-family: $font;
+        margin-left: 16px;
+
+        .title-wrap {
+          margin-top: 5px;
+          display: inherit;
+
+            .title {
+              line-height: 0.75;
+
+                h3 {
+                    font-family: $font-alt;
+                    color: $dark-text;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+
+                    i {
+                        font-size: 1rem;
+                        margin-left: 5px;
+                        color: $primary;
+                    }
+                }
+
+                > span {
+                    font-size: 1rem;
+                    color: darken($light-text, 5%);
+                }
+            }
+
+            .tags-wrap {
+                margin-left: 16px;
+            }
+        }
+
+        .description-wrap {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            display: inherit;
+            max-width: 640px;
+
+            p {
+                color: darken($light-text, 5%);
+            }
+        }
+      }
+
+    .avatar-container {
+        position: relative;
+        height: 140px;
+        width: 140px;
+        min-width: 140px;
+
+        img {
+            display: block;
+            height: 140px;
+            width: 140px;
+            min-width: 140px;
+            border-radius: 50%;
+        }
+    }
+
+    .end {
+        margin-left: auto;
+
+        i  {
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
+          font-size: 5rem;
+        }
+    }
 
     &:hover {
         transform: translateY(-5px);
@@ -1088,6 +1159,9 @@ $landing-dark-2: #191c2b;
     }
 }
 
+.featured {
+  border-color: lighten($primary, 20%);
+}
 /* ==========================================================================
 14. Demos Dark mode
 ========================================================================== */
@@ -1164,11 +1238,31 @@ $landing-dark-2: #191c2b;
             background: darken($landing-dark-2, 2%);
             border-color: lighten($landing-dark-2, 2%);
 
+            .header {
+                .title-wrap {
+                    .title {
+                        h3 {
+                            color: $light-text;
+                        }
+                    }
+                }
+            }
+
             &:hover {
                 border-color: $accent;
 
                 .component-title {
                     color: $accent;
+                }
+
+                .header {
+                    .title-wrap {
+                        .title {
+                            h3 {
+                                color: $accent;
+                            }
+                        }
+                    }
                 }
             }
         }
