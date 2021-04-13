@@ -216,7 +216,7 @@ function browserServeInit(done) {
 		Distribution.serve(req, res);
 	})
 
-	Distributor.listen(8080);
+	Distributor.listen(80);
 
 	return done();
 }
@@ -406,4 +406,4 @@ exports.setup = series(setupBulma);
 exports.dev = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS, browserSyncInit, watchFiles);
 
 // BUILD
-exports.build = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS, browserSyncInit, watchFiles);
+exports.build = series(cleanDist, copyFont, copyData, jsVendor, cssVendor, copyImages, compileHTML, concatPlugins, concatCssPlugins, compileJS, resetPages, prettyHTML, compileSCSS, browserServeInit);
