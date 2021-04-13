@@ -221,7 +221,7 @@ $(document).ready(function () {
               }
 
               if (DisplayError) {
-                Window.location.href = "/error.html";
+                Window.location.href = "/404.html";
               }
             }
           })
