@@ -101,7 +101,7 @@
       "Name": "Special Containment Procedures Foundation",
       "Image": "https://t0.rbxcdn.com/5299bb92a67556786861848613559eaf",
       "Identifier": "2",
-      "Active": "true",
+      "Active": "false",
       "Featured": "true",
       "Description": "The SCP Foundation is a fictional organization documented by the web-based collaborative-fiction project of the same name. The SCP Foundation is responsible for locating and containing individuals, entities, locations, and objects that violate natural law",
       "Note": "This is not a full-time position and is treated more as a in-house contractor position.",
@@ -111,7 +111,7 @@
       "Revenue": "10M +",
       "Position": "Junior Developer / Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Lua"],
       "Showcase": ["https://cdn.discordapp.com/attachments/694484896772784130/718500710806978620/unknown.png", "https://cdn.discordapp.com/attachments/694484896772784130/712781534867751012/unknown.png"],
       "Links": {
         "Custom": null,
@@ -135,7 +135,7 @@
       "Revenue": "6M +",
       "Position": "Lead Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Javascript", "Lua", "SQL"],
       "Links": {
         "Custom": null,
         "Roblox": null,
@@ -158,7 +158,7 @@
       "Revenue": "4M +",
       "Position": "Project Manager & Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Javascript", "Lua", "SQL", "HTML", "CSS"],
       "Links": {
         "Custom": null,
         "Roblox": null,
@@ -181,7 +181,7 @@
       "Revenue": "1M +",
       "Position": "Secondary Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Javascript", "Lua", "SQL"],
       "Links": {
         "Custom": null,
         "Roblox": null,
@@ -204,7 +204,7 @@
       "Revenue": "1.5M +",
       "Position": "Secondary Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Javascript", "Lua", "SQL"],
       "Links": {
         "Custom": null,
         "Roblox": null,
@@ -249,7 +249,7 @@
       "Revenue": "3M +",
       "Position": "Programmer",
 
-      "Stacks": ["Javascript", "Lua"],
+      "Stacks": ["Lua"],
       "Links": {
         "Custom": null,
         "Roblox": null,
