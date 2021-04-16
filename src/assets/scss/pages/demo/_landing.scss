@@ -571,6 +571,89 @@ $landing-dark-2: #191c2b;
 }
 
 /* ==========================================================================
+6. Code Samples
+========================================================================== */
+
+.code-container {
+  /* Core Modifiers. */
+  display: block !important;
+  width: 100%;
+  height: 400px;
+
+  /* Position Modifiers */
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+
+  /* Background Modifiers */
+  background-color: $landing-dark-2 !important;
+  box-shadow: $light-box-shadow;
+
+  /* Overflow Modifiers*/
+  overflow-x: auto;
+  overflow-y: auto;
+
+  /* Border Modifiers */
+  border-radius: 8px;
+  border-style: solid;
+  border-color: $landing-dark-2;
+
+  /* Constraints */
+  max-width: 700px;
+  max-height: 300px;
+
+  /* Inherited Classes */
+  .code-header {
+    /* Core Modifiers */
+    display: block;
+    top: 2px;
+    width: 100%;
+    height: 10%;
+
+    /* Position Modifiers */
+    position: sticky;
+    position: -webkit-sticky;
+
+    /* Padding Modifiers */
+    padding-left: 5px;
+    padding-bottom: 5px;
+
+    /* Text Modifiers */
+    color: $fade-grey;
+  }
+
+  > pre {
+    > code {
+      /* Core Modifiers */
+      background-color: $landing-dark-2;
+
+      /* Text Modifiers */
+      text-align: left;
+      text-shadow: $light-box-shadow;
+    }
+  }
+}
+
+/* ==========================================================================
+6. Scrollbar
+========================================================================== */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $fade-grey;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+/* ==========================================================================
 6. Stacks
 ========================================================================== */
 

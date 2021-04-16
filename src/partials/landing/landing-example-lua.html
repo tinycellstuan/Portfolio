@@ -1,0 +1,72 @@
+<code>
+local Core = script.Parent:FindFirstChild('Core');
+local Services = script:FindFirstChild('Services');
+local Databases = script:FindFirstChild('Databases');
+local Modules = script:FindFirstChild('Modules');
+------------------------
+local Variablizer = {__index = function(_,Table,Index) return Table[tostring(Index)] end}
+local Directory
+Directory = setmetatable({
+	['Services'] = setmetatable({},Variablizer)
+	,['Databases'] = setmetatable({},Variablizer)
+	,['Modules'] = setmetatable({},Variablizer)
+},Variablizer);
+
+Directory['Core'] = Directory;
+------------------------
+local function Register(Instance)
+	local Result, Error = pcall(function() --[[ Sandbox the enivroment so one failure doesn't effect the rest. ]]
+		local Routes = Directory;
+		local Path = Routes[Instance.Parent.Name] or error("'" .. Instance.Parent.Name .. "' is not a valid directory");
+
+		if Instance:IsA('ModuleScript') then
+			local Source = require(Instance); -- Source code of the module,
+			local Filter = getmetatable(Source) or {};
+			local Tether = (Filter.__call and Source) or setmetatable(Source, {__index = Directory}); --[[ Tether refers to the new module with a connection to the main direcrtory. ]]
+
+			if Filter.__call then getmetatable(Source).__index = Directory end
+
+			local Initialize = function()
+				if Tether.Init and type(Tether.Init) == 'function' then
+					local Sandbox = coroutine.wrap(Tether.Init); -- Ensures no yield on the main thread
+					local Success, Failure = pcall(Sandbox); -- Protects the primary container from being halted on error.
+
+					if Success then
+						Tether.Initialized = true;
+
+						print("'" .. Instance.Name .. "' has been initialized sucessfully.")
+					else
+						Tether.Initialized = false;
+						Tether.InitializationFailure = true; -- Used as a callback indicator
+
+						error(Failure)
+					end
+				else
+					Tether.Initialized = true; -- Although function was never ran, Initialization was complete because tether was linked.
+				end
+			end
+
+			if Tether then
+				Path[Instance.Name] = Tether;
+
+				Tether.Initialized = false; -- Internal module use for modules like DataService.
+				Tether.Console = Directory.Console and Directory.Console:Get(Instance, Tether); -- To prevent from dual reference, we'll provide the console get to each module.
+
+				return Initialize()
+			end
+		else
+			Path[Instance.Name] = Instance -- If what we're fetching isnt a module, just allow a reference to it.
+		end
+	end)
+
+	if Result then return Result else
+		warn('ERR : UNABLE TO REGISTER : ' .. Instance.Name .. ' : ' .. Error) -- This needs to be ingrained into the console module
+	end
+end
+
+for _,CoreModule in pairs(Core:GetChildren()) do Register(CoreModule) end
+for _,Database in pairs(Databases:GetChildren()) do Register(Database) end
+for _,Module in pairs(Modules:GetChildren()) do Register(Module) end
+for _,Service in pairs(Services:GetChildren()) do Register(Service) end
+------------------------
+return {},print('Server has completed loading...');</code>

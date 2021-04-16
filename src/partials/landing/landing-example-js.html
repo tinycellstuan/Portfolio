@@ -1,0 +1,35 @@
+<code class="lang-js">
+const ConsoleManager = require('./Console.js');
+const DatabaseManager = require('./Database.js');
+const SecurityManager = {};
+
+SecurityManager.AuthenticateStringContent = function(String) {return String.replace(/</g, "&lt;").replace(/>/g, "&gt;")};
+SecurityManager.AuthenticateDatabaseRequest = function(Token) {
+  const Key = process.env.DatabaseAuthenticationToken;
+  const FilteredToken = SecurityManager.AuthenticateStringContent(Token);
+
+  if (Key == FilteredToken) { return true } else {
+    ConsoleManager.processViolation(`A database request has been rejected because of an invalid authentication attempt.\n\nIdentifier: ${Token}`);
+    return false
+  }
+}
+
+SecurityManager.AuthenticateToken = function(Token, Callback) {
+  var Authenticated = 'PENDING';
+  const Query = DatabaseManager.fetchToken(Token, (Result) => {
+    if (Result && Callback) {
+      Authenticated = true
+      Callback(Authenticated)
+    } else {
+      ConsoleManager.processViolation(`An authentication request has failed due to an unauthenticated or otherwise invalid Token.\n\nIdentifier: ${Token}`);
+      Authenticated = false;
+    }
+  });
+
+  return Authenticated
+}
+
+exports.AuthenticateStringContent = SecurityManager.AuthenticateStringContent;
+exports.AuthenticateDatabaseRequest = SecurityManager.AuthenticateDatabaseRequest;
+exports.AuthenticateToken = SecurityManager.AuthenticateToken;
+</code>

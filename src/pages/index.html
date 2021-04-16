@@ -2,6 +2,8 @@
 layout: minimal-light
 title: Portfolio
 ---
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
 
 <div class="landing-page-wrapper">
@@ -33,7 +35,7 @@ My name is Michael, but most people just call be Absumption. I'm a 17 year old p
                   </div>
                 </div>
 
-                <a href="#languages" class="m-t-20 button h-button is-rounded is-primary is-elevated is-bold is-huge">
+                <a href="#pricing" class="m-t-20 button h-button is-rounded is-primary is-elevated is-bold is-huge">
                     Interested?
                 </a>
             </div>
@@ -342,6 +344,36 @@ My name is Michael, but most people just call be Absumption. I'm a 17 year old p
         </div>
     </div>
 
+    <!--Example Section-->
+    <div id="examples" class="section section-focus">
+        <div class="container">
+
+            <!--Title-->
+            <div class="section-title has-text-centered">
+                <h2 class="title is-2">Code Snippets</h2>
+                <h4>See some examples of my code!</h4>
+            </div>
+
+            <div class="columns is-multiline is-centered">
+
+              <div class="column is-5">
+                <div class="code-container">
+                  <h4 class="code-header">Lua</h4>
+
+                  <pre>{{> landing-example-lua}}</pre>
+                </div>
+              </div>
+
+              <div class="column is-5">
+                <div class="code-container">
+                  <h4 class="code-header">Javascript</h4>
+
+                  <pre>{{> landing-example-js}}</pre>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     {{> landing-footer}}
