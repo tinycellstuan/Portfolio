@@ -50,6 +50,30 @@
   ],
   "Groups": [
     {
+      "Name": "The Nova Corporation",
+      "Image": "https://t6.rbxcdn.com/6e38acaf90bf01f0d7699a13cc2d3058",
+      "Identifier": "-1",
+      "Active": "true",
+      "Featured": "true",
+      "Description": "The Nova Corportation is a unique anomalous entity contaimment roleplay group that has the best of the best development and community on Roblox!",
+      "Note": "This is my favorite group on Roblox!",
+
+      "Members": "N/A",
+      "Visits": "N/A",
+      "Revenue": "N/A",
+      "Position": "Entity Specialist",
+
+      "Stacks": ["Lua"],
+      "Links": {
+        "Custom": null,
+        "Roblox": "https://www.roblox.com/groups/4965800/",
+        "Discord": "https://discord.gg/nc",
+        "Github": null,
+        "Twitter": null
+      }
+    },
+
+    {
       "Name": "The Euphoria Project",
       "Image": "https://t0.rbxcdn.com/d9fbf0ab55a3bdecf9bcfc8e3def88d7",
       "Identifier": "0",
